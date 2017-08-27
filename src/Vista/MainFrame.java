@@ -7,6 +7,10 @@ package Vista;
 import Controlador.Controlador;
 import Controlador.MedidasControlador;
 import java.awt.CardLayout;
+import java.awt.Cursor;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -22,19 +26,19 @@ import javax.swing.JToggleButton;
 public class MainFrame extends javax.swing.JFrame {
     Controlador controlador;
     MedidasControlador medidasControlador ;   
-        ScheduledExecutorService generalExecutor;
+    ScheduledExecutorService generalExecutor;
 
     
-    public static int numbtns = 5;
-    public JToggleButton[] togset = new JToggleButton[numbtns];
+    public static int numbtns = 5; //Número de botones en la barra principal
+    public JToggleButton[] togset = new JToggleButton[numbtns]; //Vector donde se agrupan los botones
     
     public MainFrame() {
         initComponents();
         customInitComponents();
         startclock();
         medidasControlador.startRandom();
-        
-        
+        //Cursor invisibleCursor = Toolkit.getDefaultToolkit().createCustomCursor( new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB), new Point(0, 0), "blank cursor");  //Para ocultar mouse y proporcionar la experiencia de pntalla táctil
+        //this.setCursor(invisibleCursor);
     }
 
     @SuppressWarnings("unchecked")
@@ -64,7 +68,7 @@ public class MainFrame extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(800, 480));
 
-        maineHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/Header.png"))); // NOI18N
+        maineHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/Header2.png"))); // NOI18N
 
         panelTime.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -209,13 +213,13 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(maineHeader, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(panelTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(maineHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelMainCard, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelMainCard, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -314,7 +318,7 @@ public class MainFrame extends javax.swing.JFrame {
         
     }
     
-    private void setbtns(int i) {
+    private void setbtns(int i) { //Funcióm para evidenciar la presión del botón en la interfaz
         for (int j = 0; j < numbtns; j++) {
             if (j != i) 
                 togset[j].setSelected(false);

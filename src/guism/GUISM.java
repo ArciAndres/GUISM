@@ -24,6 +24,7 @@ public class GUISM {
         mainFrame.getContentPane().setBackground(Color.white);
         mainFrame.setUndecorated(true);
         mainFrame.setVisible(true);
+        
     }
     
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2017 9:24:31 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelos.Log" table="log" catalog="sgmudenar" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="location" class="Modelos.Location" fetch="select">
+            <column name="locationId" />
+        </many-to-one>
+        <many-to-one name="meter" class="Modelos.Meter" fetch="select">
+            <column name="meterId" />
+        </many-to-one>
+        <property name="time" type="timestamp">
+            <column name="time" length="19" />
+        </property>
+        <property name="event" type="string">
+            <column name="event" length="8000" />
+        </property>
+    </class>
+</hibernate-mapping>

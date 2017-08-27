@@ -36,15 +36,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="maineHeader" alignment="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="panelTime" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="panelBotones" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="maineHeader" alignment="0" max="32767" attributes="0"/>
-                  <Component id="panelMainCard" alignment="0" min="-2" pref="800" max="-2" attributes="0"/>
+                  <Component id="panelMainCard" alignment="0" pref="800" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
@@ -69,7 +69,7 @@
     <Component class="javax.swing.JLabel" name="maineHeader">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Vista/images/Header.png"/>
+          <Image iconType="3" name="/Vista/images/Header2.png"/>
         </Property>
       </Properties>
     </Component>

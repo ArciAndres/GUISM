@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 27, 2017 9:24:31 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelos.Digitalcontrol" table="digitalcontrol" catalog="sgmudenar" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="meter" class="Modelos.Meter" fetch="select">
+            <column name="meterId" />
+        </many-to-one>
+        <property name="state" type="java.lang.Boolean">
+            <column name="state" />
+        </property>
+        <property name="boardPin" type="java.lang.Integer">
+            <column name="board_pin" />
+        </property>
+    </class>
+</hibernate-mapping>
